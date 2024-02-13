@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+
+  pre_build:
+    commands:
+      - echo "Executing pre-build commands"
+	build:
+    commands:
+      - echo "Zipping deployment package..."
+      - mvn package 
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+artifacts:
+  files:
+    - target/lambda_java_sample.jar
+  discard-paths: yes
