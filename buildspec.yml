@@ -14,7 +14,6 @@ phases:
   post_build:
     commands:
      - echo "Updating lambda Function..."
-     - aws lambda update-function-code --function-name "java17lambdatest" --zip-file fileb://target/lambda_java_sample.jar
 artifacts:
   files:
     - target/lambda_java_sample.jar
